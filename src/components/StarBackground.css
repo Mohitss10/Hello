@@ -1,0 +1,33 @@
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.3); /* Cyan */
+  backdrop-filter: blur(2px);
+  animation: float-up linear infinite;
+  box-shadow: 0 0 15px rgba(0, 255, 213, 0.406), 0 0 30px rgb(0, 149, 255);
+}
+
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+  }
+}
