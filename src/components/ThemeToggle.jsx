@@ -1,8 +1,8 @@
-// ThemeToggle.tsx
-import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "lucide-react";
+import { cn } from "@/lib/utils"; // if you use classNames instead, replace accordingly
 
-export const ThemeToggle = () => {
+export const ThemeToggle = ({ className }) => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -11,39 +11,36 @@ export const ThemeToggle = () => {
       setIsDarkMode(true);
       document.documentElement.classList.add("dark");
     } else {
+      localStorage.setItem("theme", "light");
       setIsDarkMode(false);
-      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleTheme = () => {
-    const nextTheme = isDarkMode ? "light" : "dark";
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
-    localStorage.setItem("theme", nextTheme);
-    setIsDarkMode(nextTheme === "dark");
+    if (isDarkMode) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+      setIsDarkMode(false);
+    } else {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+      setIsDarkMode(true);
+    }
   };
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 md:p-0  rounded-full transition-all duration-500 "
+      className={cn(
+        "p-2 rounded-full transition-colors duration-300 focus:outline-none",
+        className
+      )}
     >
-      <span className="relative inline-block top-1 w-7 h-7">
-        <Sun
-          className={`absolute transition-all duration-500 ease-in-out transform ${
-            isDarkMode
-              ? "opacity-100 rotate-0 scale-100"
-              : "opacity-0 -rotate-45 scale-75"
-          } text-yellow-300`}
-        />
-        <Moon
-          className={`absolute transition-all duration-500 ease-in-out transform ${
-            !isDarkMode
-              ? "opacity-100 rotate-0 scale-100"
-              : "opacity-0 rotate-45 scale-75"
-          } text-blue-900`}
-        />
-      </span>
+      {isDarkMode ? (
+        <Sun className="h-6 w-6 text-yellow-300" />
+      ) : (
+        <Moon className="h-6 w-6 text-blue-900" />
+      )}
     </button>
   );
 };

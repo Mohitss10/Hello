@@ -19,10 +19,7 @@ export const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-
-      // Show navbar if scrolling up or near top
       setShowNavbar(currentScroll < lastScrollY || currentScroll < 10);
-
       setLastScrollY(currentScroll);
     };
 
@@ -32,14 +29,13 @@ export const Navbar = () => {
 
   return (
     <>
-      {/* NAVBAR CONTAINER */}
       <nav
         className={`fixed left-0 right-0 top-0 z-[5000] transition-transform duration-300 ease-in-out
-          ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-        `}
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+      `}
       >
         {/* DESKTOP NAV */}
-        <div className="relative mx-auto items-center justify-center gap-5 px-6 py-4 w-fit rounded-2xl shadow-md max-w-2xl backdrop-blur-md bg-[rgba(17,25,40,0.75)] border border-white/10 md:flex hidden mt-3">
+        <div className="relative mx-auto items-center justify-center gap-5 px-6 py-2 w-fit rounded-2xl shadow-md max-w-2xl backdrop-blur-md bg-[rgba(17,25,40,0.75)] border border-white/10 md:flex hidden mt-3">
           {navItems.map((item) => (
             <a
               key={item.name}
@@ -49,37 +45,45 @@ export const Navbar = () => {
               {item.name}
             </a>
           ))}
-          {/* <ThemeToggle/> */}
+          {/* Desktop Theme Toggle */}
+          <ThemeToggle className="ml-2" />
         </div>
 
-        {/* MOBILE NAVBAR (Top Bar) */}
+        {/* MOBILE NAV */}
         <div className="md:hidden px-4 py-3 w-full flex items-center justify-between backdrop-blur-md bg-[rgba(17,25,40,0.75)]">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="relative flex items-center w-10 h-10">
+          {/* Menu Button (left) */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="relative flex items-center w-10 h-10"
+          >
             <Menu
               size={34}
-              className={`absolute transition-all duration-300 transform ${isMenuOpen
+              className={`absolute transition-all duration-300 transform ${
+                isMenuOpen
                   ? "opacity-0 scale-75 -rotate-45"
                   : "opacity-100 scale-100 rotate-0"
-                } text-white`}
+              } text-white`}
             />
             <X
               size={34}
-              className={`absolute transition-all duration-300 transform ${isMenuOpen
+              className={`absolute transition-all duration-300 transform ${
+                isMenuOpen
                   ? "opacity-100 scale-100 rotate-0"
                   : "opacity-0 scale-75 rotate-45"
-                } text-white`}
+              } text-white`}
             />
           </button>
-          {/* <ThemeToggle className=""/> */}
-        </div>
 
+          {/* Mobile Theme Toggle (right) */}
+          {/* <ThemeToggle /> */}
+        </div>
       </nav>
 
       {/* MOBILE FULLSCREEN MENU */}
       <div
         className={`fixed inset-0 z-[4000] flex flex-col items-center justify-center space-y-8 transition-all duration-300 md:hidden
-          ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
-          backdrop-blur-xl bg-[rgba(17,25,40,0.8)]`}
+        ${isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
+        backdrop-blur-xl bg-[rgba(17,25,40,0.8)]`}
       >
         {navItems.map((item) => (
           <a
