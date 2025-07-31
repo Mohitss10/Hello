@@ -9,9 +9,6 @@ export const HeroSection = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
-        <p className="uppercase tracking-[0.2em] text-sm text-blue-700 dark:text-blue-200 mb-4">
-          Dynamic Web Magic with Next.js
-        </p>
 
         <h1 className="text-[44px] sm:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-black dark:text-white">
           Transforming Concepts into <br />

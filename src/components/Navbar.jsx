@@ -50,7 +50,7 @@ export const Navbar = () => {
         </div>
 
         {/* MOBILE NAV */}
-        <div className="md:hidden px-4 py-3 w-full flex items-center justify-between backdrop-blur-md bg-[rgba(17,25,40,0.75)]">
+        <div className="md:hidden px-1 py-3 w-full flex items-center justify-end ">
           {/* Menu Button (left) */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}

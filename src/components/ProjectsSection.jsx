@@ -3,21 +3,21 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "Tic Tac Toe Game",
+    title: "To-Do App",
     description: "A fun and animated 2-player game built with React and Tailwind.",
     image: "/projects/img1.jpg",
     tags: ["Html", "CSS", "JavaScript"],
-    demoUrl: "https://playgame1-tic-tac-toe.netlify.app/",
-    githubUrl: "https://github.com/Mohitss10/TIC_TAC_TOE.git",
+    demoUrl: "https://saveyourtodos.netlify.app/",
+    githubUrl: "https://github.com/Mohitss10/to-dos.git",
   },
   {
     id: 2,
-    title: "To-Do App",
+    title: "Tic Tac Toe Game",
     description: "A clean and minimal task manager built with React and Tailwind.",
     image: "/projects/img2.jpg",
     tags: ["React", "TailwindCSS"],
-    demoUrl: "https://saveyourtodos.netlify.app/",
-    githubUrl: "https://github.com/Mohitss10/to-dos.git",
+    demoUrl: "https://playgame1-tic-tac-toe.netlify.app/",
+    githubUrl: "https://github.com/Mohitss10/TIC_TAC_TOE.git",
   },
   {
     id: 3,
