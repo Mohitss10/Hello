@@ -97,7 +97,7 @@ export const ProjectsSection = () => {
 
         <div className="text-center mt-12">
           <a
-            className="cosmic-button bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-6 py-3 rounded-full shadow-md w-fit flex items-center mx-auto gap-2 transition-transform hover:scale-105"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium  border border-foreground rounded-2xl hover:bg-white hover:text-black transition duration-300"
             target="_blank"
             href="https://github.com/Mohitss10"
             rel="noopener noreferrer"

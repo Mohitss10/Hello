@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+
+
+
 @theme {
   --color-border: hsl(var(--border));
   --color-background: hsl(var(--background));
@@ -162,3 +165,11 @@
 }
 
 
+/* global.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

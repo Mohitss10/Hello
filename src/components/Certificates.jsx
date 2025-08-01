@@ -6,14 +6,16 @@ const certificates = [
     title: "Javascript",
     description: "- Infosys",
     image: "projects/pp1.png",
-    demoUrl: "https://github.com/Mohitss10/javascript/commit/c6392c03d70a71a3702634ad060f15484cda8f0e",
+    demoUrl: "https://github.com/Mohitss10/javascript_Certificate/commit/1655734597633da8bd2c61c73bad87372b41b359",
+    date: "june 2025",
   },
   {
     id: 2,
     title: "Prompt Engineering",
     description: "- IBM Skillbuild",
     image: "/projects/pp2.webp",
-    demoUrl: "https://github.com/Mohitss10/ibm/commit/4e6da432d04816770733f16b18ff7c790fac8844",
+    demoUrl: "https://github.com/Mohitss10/Prompt_Engineering/blob/main/Screenshot%202025-06-12%20223048.png",
+    date: "Dec 2024",
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ const certificates = [
     description: "- IBM Skillbuild",
     image: "/projects/pp3.avif",
     demoUrl: "https://www.credly.com/badges/e6145204-c4cd-46c1-b7b9-569c1daa3d87",
+    date: "July 2025",
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ const certificates = [
     description: "- Tata",
     image: "/projects/pp4.jpg",
     demoUrl: "https://github.com/Mohitss10/tcs/blob/main/Screenshot%202025-06-12%20222945.png",
+    date: "Dec 2024",
   },
   {
     id: 5,
@@ -35,8 +39,10 @@ const certificates = [
     description: "- Udemy",
     image: "/projects/pp5.jpg",
     demoUrl: "https://www.udemy.com/certificate/UC-af4d144d-d2bf-431d-bd50-f3c6c132b69e/",
+    date: "Dec 2024",
   },
 ];
+
 
 export const Certificates = () => {
   return (
@@ -64,20 +70,26 @@ export const Certificates = () => {
                 />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1">{cert.title}</h3>
-                <p className="text-muted-foreground text-sm mb-5">{cert.description}</p>
-                <div className="flex justify-end">
-                  <a
-                    href={cert.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
-                </div>
-              </div>
+<div className="p-6 relative">
+  <h3 className="text-xl font-semibold mb-1">{cert.title}</h3>
+  <p className="text-muted-foreground text-sm mb-5">{cert.description}</p>
+
+  <div className="absolute bottom-6 left-6 text-xs text-muted-foreground">
+    {cert.date}
+  </div>
+
+  <div className="flex justify-end">
+    <a
+      href={cert.demoUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+    >
+      <ExternalLink size={20} />
+    </a>
+  </div>
+</div>
+
             </div>
           ))}
         </div>

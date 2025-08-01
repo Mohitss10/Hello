@@ -50,33 +50,34 @@ export const Navbar = () => {
         </div>
 
         {/* MOBILE NAV */}
-        <div className="md:hidden px-1 py-3 w-full flex items-center justify-end ">
-          {/* Menu Button (left) */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="relative flex items-center w-10 h-10"
-          >
-            <Menu
-              size={34}
-              className={`absolute transition-all duration-300 transform ${
-                isMenuOpen
-                  ? "opacity-0 scale-75 -rotate-45"
-                  : "opacity-100 scale-100 rotate-0"
-              } text-white`}
-            />
-            <X
-              size={34}
-              className={`absolute transition-all duration-300 transform ${
-                isMenuOpen
-                  ? "opacity-100 scale-100 rotate-0"
-                  : "opacity-0 scale-75 rotate-45"
-              } text-white`}
-            />
-          </button>
+<div className="md:hidden px-4 py-1 w-full flex items-center justify-between gap-5 backdrop-blur-md">
+  {/* Theme Toggle (left) */}
 
-          {/* Mobile Theme Toggle (right) */}
-          {/* <ThemeToggle /> */}
-        </div>
+  {/* Menu Button */}
+  <button
+    onClick={() => setIsMenuOpen(!isMenuOpen)}
+    className="relative flex items-center w-10 h-10"
+  >
+    <Menu
+      size={30}
+      className={`absolute transition-all duration-300 transform ${
+        isMenuOpen
+          ? "opacity-0 scale-75 -rotate-45"
+          : "opacity-100 scale-100 rotate-0"
+      } text-muted-foreground`}
+    />
+    <X
+      size={30}
+      className={`absolute transition-all duration-300 transform ${
+        isMenuOpen
+          ? "opacity-100 scale-100 rotate-0"
+          : "opacity-0 scale-75 rotate-45"
+      } text-white`}
+    />
+  </button>
+  <ThemeToggle />
+</div>
+
       </nav>
 
       {/* MOBILE FULLSCREEN MENU */}
@@ -89,7 +90,7 @@ export const Navbar = () => {
           <a
             key={item.name}
             href={item.href}
-            className="text-xl text-white hover:text-primary transition"
+            className="text-xl text-muted-foreground hover:text-primary transition"
             onClick={() => setIsMenuOpen(false)}
           >
             {item.name}

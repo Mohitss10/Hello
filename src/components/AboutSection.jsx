@@ -17,26 +17,12 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              Turning ideas into interactive web experiences — that’s what I do. I'm a front-end web developer with a sharp eye for detail and a passion for clean, scalable code. I build modern websites that don’t just work — they wow. Always learning. Always building.
-            </p>
+              Crafting engaging, high-performance web experiences is what I do best.
+              As a front-end developer with a keen eye for detail and a commitment to clean, scalable code, I specialize in building modern, responsive websites that are as impressive as they are intuitive.            </p>
 
             <p className="text-muted-foreground">
-              I'm passionate about creating elegant solutions to complex
-              problems, and I'm constantly learning new technologies and
-              techniques to stay at the forefront of the ever-evolving web
-              landscape.
+              I'm driven by a passion for elegant solutions to complex challenges, and I stay at the cutting edge of web development by continuously exploring new technologies, frameworks, and best practices.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-
-              <a
-                href="projects/resume.pdf"
-                download="Mohit-Gawande-CV.pdf"
-                className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
-              >
-                Download CV
-              </a>
-            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-6">
@@ -62,7 +48,10 @@ export const AboutSection = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-lg">B.Tech in Computer Science</h4>
                   <p className="text-muted-foreground">
-                    GH Raisoni University, Saikheda (2022 – 2026) Current CGPA: 8.6
+                    GH Raisoni University, Saikheda (2022 – 2026)
+                  </p>
+                  <p className="text-muted-foreground">
+                    Current CGPA: 8.6
                   </p>
                   <p className="text-muted-foreground mt-1">
                     Focused on software engineering, algorithms, and data structures.
@@ -71,6 +60,16 @@ export const AboutSection = () => {
               </div>
             </div>
           </div>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 pt-10 justify-center">
+
+          <a
+            href="projects/resume.pdf"
+            download="Mohit-Gawande-CV.pdf"
+            className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+          >
+            Download CV
+          </a>
         </div>
       </div>
     </section>
