@@ -66,10 +66,10 @@ export const ContactSection = () => {
             className="w-full max-w-lg mx-auto bg-white dark:bg-card p-4 sm:p-6 md:p-8 rounded-xl shadow-md space-y-4 text-sm"
           >
             <h3 className="text-2xl sm:text-3xl font-bold text-center text-primary mb-1">
-              Contact Us
+              Contact me
             </h3>
             <p className="text-center text-muted-foreground text-sm mb-4">
-              We will get back to you asap!
+              I will get back to you asap!
             </p>
 
             {/* Name Field */}
@@ -141,9 +141,7 @@ export const ContactSection = () => {
           <a href="https://github.com/Mohitss10" className="hover:text-white transition">
             <Github />
           </a>
-          <a href="https://x.com/MohitGawande15" className="hover:text-white transition">
-            <Twitter />
-          </a>
+          
           <a
             href="https://www.linkedin.com/in/mohit-gawande-774402253/"
             className="hover:text-white transition"
